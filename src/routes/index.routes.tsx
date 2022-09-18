@@ -5,12 +5,14 @@ import linking from './linking'
 import screens from 'utils/screens'
 import MainRoutes from './main.routes'
 import AuthRoutes from './auth.routes'
+import { StatusBar } from 'expo-status-bar'
 
 const AppStack = createNativeStackNavigator<RootStackParamList>()
 
 const Routes = () => {
   return (
     <NavigationContainer linking={linking}>
+      <StatusBar style='dark'  />
       <AppStack.Navigator
         initialRouteName={screens.Main}
         screenOptions={{ headerShown: false }}
