@@ -1,8 +1,8 @@
 import { useFonts } from 'expo-font';
-import { StatusBar } from 'expo-status-bar';
 import { useCallback, useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import * as SplashScreen from "expo-splash-screen";
+import Routes from 'routes/index.routes';
 
 export default function App() {
 
@@ -29,9 +29,8 @@ export default function App() {
   }
 
   return (
-    <View className='flex justify-center items-center flex-1' onLayout={onLayoutRootView}>
-      <Text className='text-primary font-GothamBook'>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View className='flex-1' onLayout={onLayoutRootView}>
+      <Routes/>
     </View>
   );
 }
