@@ -6,14 +6,16 @@ module.exports = {
     colors: {
       none: 'transparent',
       primary: '#ff585d',
+      'primary-opacity': '#ff585ea7',
       white: '#ffffff',
       gray: '#484848',
+      'semi-gray': '#cccccc',
       error: '#b80757ff',
       success: '#74fda6',
       warn: '#f1be57d8'
     },
     fontFamily: {
-      GothamBold: ['GothamBoldRegular'],
+      GothamBold: ['GothamBold'],
       GothamBook: ['GothamBook']
     }
   },

@@ -7,8 +7,10 @@
       "assets/*": ["./assets/*"],
       "components/*": ["./src/components/*"],
       "hooks/*": ["./src/hooks/*"],
-      "screens/*": ["./src/pages/*"],
-      "utils/*": ["./src/utils/*"]
+      "screens/*": ["./src/screens/*"],
+      "utils/*": ["./src/utils/*"],
+      "types/*": ["./src/types/*"],
+      "routes/*": ["./src/routes/*"]
     }
   }
 }
