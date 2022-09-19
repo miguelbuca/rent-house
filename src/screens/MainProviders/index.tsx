@@ -1,13 +1,16 @@
 import { View, Text, Image, Button, TextInput } from 'react-native'
-import React from 'react'
-import MapView from 'react-native-maps'
+import React, { useEffect, useState } from 'react'
+import MapView, { Marker } from 'react-native-maps'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Link } from '@react-navigation/native'
 import { FlatList } from 'react-native'
 import LanchCard from 'components/organisms/lanchCard'
 import { LanchCardProps } from 'components/organisms/lanchCard/types'
+import { resquestLocationPermission } from './script'
+import { LocationObject } from 'expo-location'
 
 const MainProviders = () => {
+  const [location, setLocation] = useState<LocationObject>()
   const lanch: LanchCardProps[] = [
     {
       kind: 'Duplex',
@@ -43,10 +46,40 @@ const MainProviders = () => {
     }
   ]
 
+  useEffect(() => {
+    resquestLocationPermission((location, error) => {
+      if (location) {
+        setLocation(location)
+      }
+    })
+  }, [])
+
   return (
     <View className="flex-1 flex flex-col">
       <View className="relative flex flex-1 h-[50%]">
-        <MapView className="flex-1" />
+        <MapView
+          region={
+            location
+              ? {
+                  latitude: location?.coords.latitude,
+                  longitude: location?.coords.longitude,
+                  latitudeDelta: 0.009,
+                  longitudeDelta: 0.009
+                }
+              : undefined
+          }
+          className="flex-1"
+        >
+          {location && (
+            <Marker
+              pinColor="#ff585d"
+              coordinate={{
+                latitude: location?.coords.latitude,
+                longitude: location?.coords.longitude
+              }}
+            />
+          )}
+        </MapView>
         <SafeAreaView className="flex flex-row items-center absolute p-[8px]">
           <View className="flex-1">
             <TextInput
