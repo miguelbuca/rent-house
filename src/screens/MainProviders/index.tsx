@@ -63,8 +63,8 @@ const MainProviders = () => {
               ? {
                   latitude: location?.coords.latitude,
                   longitude: location?.coords.longitude,
-                  latitudeDelta: 0.009,
-                  longitudeDelta: 0.009
+                  latitudeDelta: 0.015,
+                  longitudeDelta: 0.015
                 }
               : undefined
           }
