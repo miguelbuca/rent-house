@@ -10,19 +10,20 @@ import { LanchCardProps } from 'components/organisms/lanchCard/types'
 const MainProviders = () => {
   const lanch: LanchCardProps[] = [
     {
-      kind: 'T1',
+      kind: 'Duplex',
       ower: {
         name: 'Miguel Buca',
         phone: '(+244)948600567'
       },
-      price: '80000',
-      model: 'per-month',
+      price: 80000,
+      model: 'qarter',
       description: {
         energy: true,
         water: false,
-        "air-conditioning": true,
+        'air-conditioning': true,
         others: 'Quintal compartilhado'
-      }
+      },
+      image: require('assets/icons/house-1.jpeg')
     },
     {
       kind: 'T1',
@@ -30,14 +31,15 @@ const MainProviders = () => {
         name: 'Miguel Buca',
         phone: '(+244)948600567'
       },
-      price: '80000',
+      price: 80000,
       model: 'per-month',
       description: {
         energy: true,
         water: false,
-        "air-conditioning": true,
+        'air-conditioning': true,
         others: 'Quintal compartilhado'
-      }
+      },
+      image: require('assets/icons/house-2.webp')
     }
   ]
 

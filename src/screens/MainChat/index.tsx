@@ -33,7 +33,7 @@ const MainChat = () => {
   ]
   return (
     <View className="flex-1 flex-col">
-      <SafeAreaView className="flex h-[65px] bg-white shadow">
+      <SafeAreaView className="flex h-[70px] bg-white shadow">
         <View className="relative flex-1 flex items-center justify-center px-[8px]">
           <Text className="font-GothamBold text-[16px] text-primary">Chat</Text>
           <View className="absolute right-[8px]">
@@ -64,7 +64,7 @@ const MainChat = () => {
                 <View className="py-[18px] flex flex-row">
                   <View className="flex items-center mr-[8px]">
                     <View
-                      className={`flex items-center w-[55px] h-[55px] justify-center rounded-full border-dashed border ${
+                      className={`flex items-center w-[55px] h-[55px] justify-center rounded-full border-solid border ${
                         item.readAll ? 'border-semi-gray' : 'border-primary'
                       }`}
                     >

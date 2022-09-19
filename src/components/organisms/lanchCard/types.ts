@@ -1,3 +1,5 @@
+import { ImageSourcePropType } from "react-native"
+
 export type DescriptionType = {
   energy: boolean
   water: boolean
@@ -6,7 +8,7 @@ export type DescriptionType = {
 }
 
 export interface LanchCardProps {
-  image?: string
+  image: ImageSourcePropType
   kind:
     | 'Suite'
     | 'T1'
@@ -21,7 +23,7 @@ export interface LanchCardProps {
     | 'V5'
     | 'Duplex'
   description: DescriptionType
-  price: string
+  price: number
   model: 'per-month' | 'simestrer' | 'qarter'
   ower: UserType
 }
